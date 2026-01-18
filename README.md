@@ -56,6 +56,13 @@ This project allows an **Admin** to manage shop details and track mobile devices
 7. Run the project in browser: http://localhost/mobile_tracking/
 
 
+## 🔐 Demo Login Credentials (For Testing)
+
+> These credentials are for demo/testing purposes only.
+
+**Admin Login**
+- Username: `admin`
+- Password: `admin`
 
 ---
 
@@ -84,5 +91,5 @@ This project is suitable for:
 
 **Shoaib Ahmad**  
 
+⚠️ Note: Authentication logic is implemented for demonstration purposes in a local environment.
 
-If you find this project useful, feel free to **star ⭐ the repository**.
