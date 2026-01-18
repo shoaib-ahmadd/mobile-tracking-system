@@ -1,0 +1,148 @@
+/* ============================= */
+/*   MOBILE TRACKING – SAFE UI   */
+/* ============================= */
+
+/* DO NOT TOUCH TABLE LAYOUT */
+table, tr, td {
+    border-collapse: collapse;
+}
+
+/* background – very light dark */
+body {
+    background-color: #2f343f;
+}
+
+/* ADMIN TITLE (right side) */
+body b,
+body font,
+body h1,
+body h2 {
+    color: #ffb870;
+}
+
+/* ============================= */
+/* LEFT MENU BUTTONS */
+/* ============================= */
+
+.left_menu_bg {
+    background: transparent;
+    padding: 0;
+}
+
+.left_menu_bg a {
+    display: block;
+    margin: 10px;
+    padding: 10px 14px;
+    background: #0b1c2d;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 0 0 0 1px #1e3a5f inset;
+    transition: all 0.2s ease;
+}
+
+.left_menu_bg a:hover {
+    background: #153a63;
+    transform: translateX(4px);
+}
+
+/* ============================= */
+/* INPUT BOXES (IMEI / SHOP NAME etc.) */
+/* ============================= */
+
+input[type="text"],
+select,
+textarea {
+    padding: 6px 8px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background: #101820;
+    color: #eaeaea;
+    font-size: 12px;
+}
+
+/* ============================= */
+/* SUBMIT BUTTON */
+/* ============================= */
+
+input[type="submit"] {
+    padding: 7px 16px;
+    background: #1e88e5;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background: #1565c0;
+}
+
+/* ============================= */
+/* NO DATA MESSAGE (wrong IMEI) */
+/* ============================= */
+
+.no-data {
+    margin: 15px auto;
+    padding: 10px;
+    width: 85%;
+    background: #101820;
+    color: #cfd8dc;
+    border-left: 4px solid #1e88e5;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* ============================= */
+/* REMOVE UNWANTED WHITE LINES */
+/* ============================= */
+
+img {
+    border: none;
+}
+
+/* all text inputs (shop name, location etc) */
+input[type="text"],
+select,
+textarea {
+    width: 220px;              /* controlled size */
+    padding: 8px 10px;
+    margin: 6px 0;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background: #020617;
+    color: #e5e7eb;
+    font-size: 13px;
+}
+
+/* address box only (textarea) */
+textarea {
+    width: 240px;
+    height: 70px;
+    resize: none;              
+}
+
+/* dropdown arrow fix */
+select {
+    cursor: pointer;
+}
+
+/* focus effect (professional feel) */
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(59,130,246,0.4);
+}
+
+/* labels like Shop Name, Address, Location */
+td {
+    color: #e5e7eb;
+    font-size: 13px;
+}
