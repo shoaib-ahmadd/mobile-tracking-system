@@ -1,95 +1,188 @@
-# 📱 Mobile Tracking System (PHP & MySQL)
+<div align="center">
 
-A **web-based Mobile Tracking System** developed using **PHP, MySQL, HTML, CSS, and JavaScript**.  
-This project allows an **Admin** to manage shop details and track mobile devices using **IMEI numbers** through a simple and functional admin panel.
+<h1>📱 Mobile Tracking System</h1>
 
----
+<p><strong>IMEI-based mobile device tracking with a secure admin panel — built with PHP & MySQL</strong></p>
 
-## 🚀 Features
+<p>
+  <img src="https://img.shields.io/badge/PHP-8.0+-777BB4?style=flat-square&logo=php&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MySQL-Database-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Apache-XAMPP%2FWAMP-CA2136?style=flat-square&logo=apache&logoColor=white"/>
+  <img src="https://img.shields.io/badge/HTML%2FCSS%2FJS-Frontend-E34F26?style=flat-square&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Status-Active-22c55e?style=flat-square"/>
+</p>
 
-- 🔐 Admin Login System
-- 📟 IMEI-based Mobile Tracking
-- 🏪 Insert Shop Details
-- 📋 Review Shop Information
-- 🗄️ MySQL Database Integration
-- 🎨 Clean Admin UI
-- ⚡ Fast search and data retrieval
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** PHP  
-- **Database:** MySQL  
-- **Server:** Apache (XAMPP / WAMP)
+</div>
 
 ---
 
-## 📂 Project Modules
+## What is this?
 
-- Admin Authentication  
-- Admin Dashboard  
-- Insert Shop Details  
-- Review Shop Details  
-- IMEI Tracking  
-- Database Connectivity  
+A web-based admin panel that lets an administrator manage shop records and track mobile devices using their **IMEI numbers**. Built on a classic PHP + MySQL stack, it's clean, functional, and easy to set up locally using XAMPP or WAMP.
+
+> ⚠️ Authentication logic is implemented for **demonstration purposes** in a local development environment only.
 
 ---
 
-## 🗄️ Database Structure
+## Demo Credentials
 
-- `admin` – Admin login credentials  
-- `shop_details` – Shop name, address, location, type  
-- `tracking` – IMEI tracking records  
+| Role | Username | Password |
+|---|---|---|
+| Admin | `admin` | `admin` |
 
----
-
-## ⚙️ Installation & Setup
-
-1. Install **XAMPP / WAMP**
-2. Clone or download this repository
-3. Move the project folder to:
-4. Create a database in **phpMyAdmin**
-5. Import the provided `.sql` file
-6. Update database credentials in PHP files
-7. Run the project in browser: http://localhost/mobile_tracking/
-
-
-## 🔐 Demo Login Credentials (For Testing)
-
-> These credentials are for demo/testing purposes only.
-
-**Admin Login**
-- Username: `admin`
-- Password: `admin`
+> For testing only — change credentials before any deployment.
 
 ---
 
-## 🎯 Use Case
+## System Modules
 
-This project is suitable for:
-- Academic Mini / Major Projects
-- PHP & MySQL Practice
-- Admin Panel Development
-- CRUD Operations Learning
-- Resume & Portfolio Showcase
-
----
-
-## 🚧 Future Enhancements
-
-- User-level authentication
-- Role-based access control
-- Better error handling
-- Responsive UI
-- Advanced IMEI validation
+| Module | Description |
+|---|---|
+| 🔐 Admin Authentication | Secure login/logout system for admin users |
+| 🏠 Admin Dashboard | Central panel overview after login |
+| 🏪 Insert Shop Details | Add shop name, address, location, type |
+| 📋 Review Shop Details | View and manage all registered shops |
+| 📟 IMEI Tracking | Search and track mobile devices by IMEI number |
+| 🗄️ Database Connectivity | MySQL integration via PHP |
 
 ---
 
-## 👨‍💻 Author
+## Tech Stack
 
-**Shoaib Ahmad**  
+| Layer | Technology |
+|---|---|
+| **Backend** | PHP 8.0+ |
+| **Database** | MySQL |
+| **Frontend** | HTML, CSS, JavaScript |
+| **Server** | Apache via XAMPP / WAMP |
 
-⚠️ Note: Authentication logic is implemented for demonstration purposes in a local environment.
+---
 
+## Project Structure
+
+```
+mobile_tracking/
+├── index.php              # Entry point / login page
+├── dashboard.php          # Admin dashboard
+├── insert_shop.php        # Add shop details
+├── review_shop.php        # View shop records
+├── imei_tracking.php      # IMEI search & tracking
+├── db_connect.php         # Database connection config
+├── static.css             # Stylesheet
+├── database.sql           # SQL schema & seed file
+└── README.md
+```
+
+---
+
+## Database Schema
+
+```
+┌──────────────┐      ┌────────────────────┐      ┌──────────────────┐
+│    admin     │      │   shop_details     │      │    tracking      │
+├──────────────┤      ├────────────────────┤      ├──────────────────┤
+│ id           │      │ id                 │      │ id               │
+│ username     │      │ shop_name          │      │ imei_number      │
+│ password     │      │ address            │      │ device_name      │
+└──────────────┘      │ location           │      │ shop_id (FK)     │
+                      │ shop_type          │      │ tracked_at       │
+                      └────────────────────┘      └──────────────────┘
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [XAMPP](https://www.apachefriends.org/) or [WAMP](https://www.wampserver.com/) installed
+
+### Setup Steps
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/shoaib-ahmadd/mobile-tracking-system.git
+```
+
+**2. Move to your server root**
+```
+# XAMPP
+C:/xampp/htdocs/mobile_tracking/
+
+# WAMP
+C:/wamp64/www/mobile_tracking/
+```
+
+**3. Create the database**
+- Open [phpMyAdmin](http://localhost/phpmyadmin)
+- Create a new database: `mobile_tracking_db`
+- Import the provided `database.sql` file
+
+**4. Configure database credentials**
+
+Edit `db_connect.php`:
+```php
+$host     = "localhost";
+$username = "root";
+$password = "";           // your MySQL password
+$database = "mobile_tracking_db";
+```
+
+**5. Launch the app**
+```
+http://localhost/mobile_tracking/
+```
+
+---
+
+## How It Works
+
+```
+Admin Login
+    ↓
+Dashboard
+    ├── Insert Shop Details → Stored in MySQL
+    ├── Review Shop Details ← Fetched from MySQL
+    └── IMEI Tracking
+            ↓
+        Search by IMEI Number
+            ↓
+        Retrieve Matching Device & Shop Record
+            ↓
+        Display Result to Admin
+```
+
+---
+
+## Use Cases
+
+- 🎓 Academic mini/major projects
+- 🔁 PHP + MySQL CRUD practice
+- 🖥️ Admin panel development learning
+- 📋 Resume & portfolio showcase
+
+---
+
+## Roadmap
+
+- [ ] Role-based access control (Admin / Staff)
+- [ ] User-level authentication
+- [ ] Advanced IMEI validation & formatting
+- [ ] Responsive UI (mobile-friendly)
+- [ ] Improved error handling & input sanitization
+- [ ] Export records to CSV / PDF
+
+---
+
+## Author
+
+<div align="center">
+
+**Shoaib Ahmad**
+
+[![GitHub](https://img.shields.io/badge/GitHub-shoaib--ahmadd-181717?style=flat-square&logo=github)](https://github.com/shoaib-ahmadd)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-shoaib--ahmadd-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/shoaib-ahmadd)
+
+If this helped you, a ⭐ on GitHub means a lot!
+
+</div>
